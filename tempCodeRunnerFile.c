@@ -1,56 +1,42 @@
 #include<stdio.h>
-#include<stdlib.h>
-struct node 
+// Write a program to perform addition of 2 numbers
+/////////////////////////////////////////////////////////////////
+//  Function Name : Addition                                   //
+//  Description   : Used to perform addition of 2 numbers      //
+//  Input         : Integer   (11,-10)                                 //
+//  Output        : Integer     (21)                               //
+//  Date          : 13/05/2022                                 //
+/////////////////////////////////////////////////////////////////
+
+int Addition(int iValue1, int iValue2)
 {
-    int data ;
-    struct node *next;
-
-};
-typedef struct node NODE;
-typedef struct node* PNODE;
-typedef struct node** PPNODE;
-
-void InsertFirst(PPNODE Head,int iNo)
-{
-   PNODE newn = NULL;
-   newn = (PNODE)malloc(sizeof(NODE));
-   newn->data = iNo;
-   newn -> next = NULL;
-
-   if(*Head == NULL)
-   {
-       *Head = newn;
-   }
-   else
-   {
-       newn->next = *Head ;
-       *Head = newn;
-
-   }
-
-}
-void Display(PNODE Head)
-{
-    printf("\n");
-    while (Head!=NULL)
+    if(iValue1<0)
     {
-        printf("%d\t",Head->data);
-        Head = Head->next;
+      iValue1 = -iValue1;
     }
-    printf("\n");
+    if(iValue2<0)
+    {
+        iValue2 = -iValue2;
+    }
+    int iAns = 0;
+    iAns = iValue1 + iValue2;
+    return iAns;
 }
 
 int main()
 {
-    PNODE First = NULL;
-     InsertFirst(&First,101);
-     InsertFirst(&First,51);
-     InsertFirst(&First,21);
-     InsertFirst(&First,11);
- 
-    Display(First);
 
+    int iNo1 = 0;
+    int iNo2 = 0;
+    int iNo3 = 0;
 
+    printf("Enter the first number\n");
+    scanf("%d",&iNo1);
 
+    printf("Enter the second number\n");
+    scanf("%d",&iNo2);
+
+    iNo3 = Addition(iNo1,iNo2);
+    printf("Addition is : %d\n",iNo3);
     return 0;
 }
