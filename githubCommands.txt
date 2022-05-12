@@ -1,0 +1,7 @@
+git init - Used to initialize/create a new git repository. Only 1 time
+
+git add . - Used to add all the files that were changed
+
+git commit -m "Your message" - Used to commit all the changes
+
+git push - Push your code
